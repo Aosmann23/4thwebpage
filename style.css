@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Base Styles & Mobile-First Layout (< 768px)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+/* Typography */
+h1 {
+    color: #2c3e50;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+h2 {
+    color: #2980b9;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 6px;
+    margin-top: 0;
+}
+
+/* WCAG 1.4.3 compliant subtitle grey (4.62:1 ratio) */
+.subtitle {
+    text-align: center;
+    color: #6c7777;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+/* Mobile Layout: Single column stacked cards */
+.grid-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.highlight-box {
+    background-color: #e8f4f8;
+    padding: 12px;
+    border-left: 4px solid #2980b9;
+    margin-top: 10px;
+}
+
+/* WCAG 1.4.3 compliant orange link (4.59:1 ratio) with generous touch target */
+.portfolio-footer a {
+    color: #c84f00;
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+.portfolio-footer {
+    margin-top: 24px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 16px;
+}
+
+/* ==========================================================================
+   Desktop & Tablet Layout (>= 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    body {
+        padding: 40px 20px;
+    }
+
+    .container {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Transition from single-column stack to CSS Grid */
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* Span About Me full width across top of grid */
+    .about-card {
+        grid-column: 1 / -1;
+    }
+
+    .work-card,
+    .goals-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
